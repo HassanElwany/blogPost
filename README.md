@@ -1,1 +1,1 @@
-# bogPost
+# blogPost
