@@ -1,24 +1,24 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post Project</title>
-</head>
+    <%- include('./partials/head.ejs') %>
 <body>
-    <nav>
-        <div class="site-title">
-            <a href="./"> <h1>Blog Post</h1></a>
-            <p> static template</p>
-        </div>
-        <ul>
-            <li> <a href="./"> Blogs</a></li>
-            <li> <a href="./about"> About</a></li>
-            <li> <a href="./blogs/creat">New Blog</a></li>
-        </ul>
-    </nav>
+   <%- include('./partials/nav.ejs') %>
     <div class="blogs content">
         <h2>All Blogs</h2>
+
+        <%#looping throw the blog array to render the each of it.%>
+
+        <% if (blogs.length > 0){ %>  
+            <% blogs.forEach(blog => { %>
+
+              <h3 class="title"><%= blog.title %></h3>
+              <p class="snippet"><%= blog.snippet %></p> 
+
+              <% }) %>
+        <% } else { %>
+              <p>No Blogs yet to render it</p>
+            <% } %>
     </div>
+
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
