@@ -1,16 +1,22 @@
 const http = require('http')
 const fs = require('fs')
+const _ = require('lodash')
 
 
 
  const server = http.createServer((req, res) => {
-     console.log(req.url)
+
+
+    // lodash
+    const mun = _.random(0, 20)
+    console.log(mun)
 
      //setting the header content type
      res.setHeader('content-type', 'text/html')
 
      // made specific path page as a responses 
     let path  = './views/'
+    
     if (req.url === '/') {
         path += 'index.html'
         res.statusCode = 200;
